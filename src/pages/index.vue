@@ -60,6 +60,36 @@ const maisonsListe: MaisonRecord[] = [
       "prix": 570000,
       "surface": 475,
       "updated": "2024-04-11 12:07:45.130Z"
+    },
+    {
+      "adresse": "3 impasse flemme, vannes",
+      "collectionId": "xbh0ohpeyzkcjt1",
+      "collectionName": "maison",
+      "created": "2024-05-03 12:39:51.164Z",
+      "favori": false,
+      "id": "t6ti1ljy4wkucmd",
+      "images": "",
+      "nbChambres": 2,
+      "nbSdb": 1,
+      "nomMaison": "maison 4",
+      "prix": 150000,
+      "surface": 78,
+      "updated": "2024-05-03 12:39:51.164Z"
+    },
+    {
+      "adresse": "3 rue des pouilleux, hesse",
+      "collectionId": "xbh0ohpeyzkcjt1",
+      "collectionName": "maison",
+      "created": "2024-05-03 12:40:55.607Z",
+      "favori": false,
+      "id": "040ghlze5isdm9e",
+      "images": "",
+      "nbChambres": 3,
+      "nbSdb": 1,
+      "nomMaison": "maison 5",
+      "prix": 120000,
+      "surface": 93,
+      "updated": "2024-05-03 12:40:55.607Z"
     }
   ] 
   console.log(maisonsListe);
