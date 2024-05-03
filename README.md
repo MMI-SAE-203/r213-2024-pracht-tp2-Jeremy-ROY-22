@@ -18,7 +18,7 @@ Dans le `<script setup>` de [`/src/pages/index.vue`](/src/pages/index.vue), ajou
 const maisonsListe = /* coller ici le tableau d'objet */
 ```
 
-### Le type :
+### Le type : 
 
 - Survoler la variable `maisonsListe` : vous devez voir s'afficher le type inféré par TypeScript.
 - Copier le type et l'appliquer à la variable :\
