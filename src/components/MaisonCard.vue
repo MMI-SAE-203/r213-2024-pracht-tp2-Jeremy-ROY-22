@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { MaisonRecord } from '@/types'
 
-const props: MaisonRecord = defineProps<MaisonRecord>()
+defineProps<MaisonRecord>()
+
 </script>
 <template>
   <!-- <div class="personne-card border-2 p-1">
@@ -14,7 +15,7 @@ const props: MaisonRecord = defineProps<MaisonRecord>()
   <div class="self-stretch flex-grow-0 flex-shrink-0 h-[200px]">
     <div class="w-[394.67px] h-[200px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-lg rounded-tr-lg bg-gray-500"></div>
     <img
-      src="pexels-binyamin-mellish-106399-1.jpeg"
+      src=""
       class="w-[394.67px] h-[235px] absolute left-[-0.5px] top-[-24.5px] object-cover"
     />
   </div>
@@ -23,21 +24,21 @@ const props: MaisonRecord = defineProps<MaisonRecord>()
       <div class="flex-grow-0 flex-shrink-0 w-[249px] h-[75px]">
         <div class="flex justify-start items-end w-[164.11px] absolute left-0 top-0 gap-0.5">
           <p class="flex-grow-0 flex-shrink-0 text-2xl font-bold text-left text-indigo-500">
-            {{ prix }}
+            {{ prix }} €
           </p>
           <p class="flex-grow-0 flex-shrink-0 w-[58px] h-8 text-base text-left text-gray-500">
             /month
           </p>
         </div>
         <p class="w-[249px] absolute left-0 top-[43px] text-2xl font-semibold text-left text-gray-900">
-          {{ nomMaison}}
+          {{ nomMaison }}
         </p>
       </div>
       <svg
-        width="49"
+        width="48"
         height="48"
         viewBox="0 0 49 48"
-        fill="none"
+        :fill="favori ? 'red':'white'"
         xmlns="http://www.w3.org/2000/svg"
         class="flex-grow-0 flex-shrink-0 w-12 h-12"
         preserveAspectRatio="xMidYMid meet"
@@ -106,7 +107,7 @@ const props: MaisonRecord = defineProps<MaisonRecord>()
             stroke-linejoin="round"
           ></path>
         </svg>
-        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">4 Beds</p>
+        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600"> {{ nbChambres }} Beds</p>
       </div>
       <div class="flex justify-center items-center flex-grow relative gap-2">
         <svg
@@ -154,7 +155,7 @@ const props: MaisonRecord = defineProps<MaisonRecord>()
             </clipPath>
           </defs>
         </svg>
-        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">2 Bathrooms</p>
+        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">{{ nbSdb }} bathrooms</p>
       </div>
       <div class="flex justify-end items-center flex-grow relative gap-2">
         <svg
@@ -195,7 +196,7 @@ const props: MaisonRecord = defineProps<MaisonRecord>()
             </clipPath>
           </defs>
         </svg>
-        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600">6x7.5 m²</p>
+        <p class="flex-grow-0 flex-shrink-0 text-xs text-left text-gray-600"> {{ surface }} m²</p>
       </div>
     </div>
   </div>
