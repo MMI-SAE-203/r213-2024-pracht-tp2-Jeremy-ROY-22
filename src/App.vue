@@ -23,5 +23,4 @@ onErrorCaptured((err, instance, info) => {
       <component :is="Component" />
     </Suspense>
   </RouterView>
-  <MaisonCard v-bind="maisonsListe[0]" />
 </template>

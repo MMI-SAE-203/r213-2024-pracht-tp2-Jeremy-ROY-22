@@ -1,9 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import MaisonCard from '@/components/MaisonCard.vue';
-import type { MaisonRecord } from '@/types'
+import { pb } from '@/backend';
+import MaisonCard from '@/components/MaisonCard.vue'
+//import type { MaisonRecord } from '@/types'
 
-const maisonsListe: MaisonRecord[] = [
+/* const maisonsListe: MaisonRecord[] = [
     {
       "adresse": "12 rue des cerisiers, 25420, Bart",
       "collectionId": "xbh0ohpeyzkcjt1",
@@ -79,7 +80,8 @@ const maisonsListe: MaisonRecord[] = [
       "surface": 93,
       "updated": "2024-05-03 12:40:55.607Z"
     }
-  ] 
+  ]  */
+  const maisonsListe = await pb.collection('maison').getFullList()
   console.log(maisonsListe);
   
 </script>
@@ -87,9 +89,10 @@ const maisonsListe: MaisonRecord[] = [
 <template>
   <h1 class="text-2xl">Bonjour monde !</h1>
   <h2>
+   <!--  <MaisonCard v-bind="maisonsListe[0]" />
     <MaisonCard v-bind:="maisonsListe [2]" />
-    <MaisonCard v-bind:="maisonsListe [1]" />
+    <MaisonCard v-bind:="maisonsListe [1]" /> -->
     <!-- <PersonneCard v-for="unPersonne in personnesListe" :key="unPersonne.nom" v-bind="unPersonne" /> -->
-    <!-- <MaisonCard v-for="uneMaison in maisonsListe :key="uneMaison.nomMaison""/> -->
+    <MaisonCard v-for="uneMaison in maisonsListe" :key="uneMaison.id" v-bind="uneMaison"/>
   </h2>
 </template>
