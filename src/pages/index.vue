@@ -2,6 +2,7 @@
 <script setup lang="ts">
 import { pb } from '@/backend';
 import MaisonCard from '@/components/MaisonCard.vue'
+import { allMaisonsFavori } from '@/backend'
 //import type { MaisonRecord } from '@/types'
 
 /* const maisonsListe: MaisonRecord[] = [
@@ -81,9 +82,11 @@ import MaisonCard from '@/components/MaisonCard.vue'
       "updated": "2024-05-03 12:40:55.607Z"
     }
   ]  */
+
   const maisonsListe = await pb.collection('maison').getFullList()
   console.log(maisonsListe);
   
+  const maisonsFav = await allMaisonsFavori()
 </script>
 
 <template>
@@ -94,5 +97,7 @@ import MaisonCard from '@/components/MaisonCard.vue'
     <MaisonCard v-bind:="maisonsListe [1]" /> -->
     <!-- <PersonneCard v-for="unPersonne in personnesListe" :key="unPersonne.nom" v-bind="unPersonne" /> -->
     <MaisonCard v-for="uneMaison in maisonsListe" :key="uneMaison.id" v-bind="uneMaison"/>
+    <MaisonCard v-for="uneMaison in maisonsFav" :key="uneMaison.id" v-bind="uneMaison"/>
+
   </h2>
 </template>
