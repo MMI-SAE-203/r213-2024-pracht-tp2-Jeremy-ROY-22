@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { MaisonRecord } from '@/types'
 
-defineProps<MaisonRecord>()
+const props: MaisonRecord = defineProps<MaisonRecord>()
 
 </script>
 <template>
