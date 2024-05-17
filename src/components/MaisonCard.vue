@@ -6,19 +6,12 @@
   const props = defineProps<MaisonResponse<any>>()
 </script>
 <template>
-  <div>
-    <!-- ... Changez <img> en : -->
-    <ImgPb :record="props" :filename="image" :width="387" :height="235" class="..." />
-  </div>
-</template>
 
   <div class="flex flex-col justify-start items-start flex-grow relative rounded-lg bg-white border-[1.5px] border-indigo-100">
-  <div class="self-stretch flex-grow-0 flex-shrink-0 h-[200px]">
-    <div class="w-[394.67px] h-[200px] absolute left-[-0.5px] top-[-0.5px] rounded-tl-lg rounded-tr-lg bg-gray-500"></div>
-    <img
-      src=""
-      class="w-[394.67px] h-[235px] absolute left-[-0.5px] top-[-24.5px] object-cover"
-    />
+  <div class="self-stretch flex-grow-0 flex-shrink-0 h-[250px]">
+    <div>
+    <ImgPb :record="props" :filename="images" :width="387" :height="235" class="..." />
+  </div>
   </div>
   <div class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-[15px] px-5 py-[30px]">
     <div class="flex justify-between items-start self-stretch flex-grow-0 flex-shrink-0 relative">
@@ -28,7 +21,7 @@
             {{ prix }} €
           </p>
           <p class="flex-grow-0 flex-shrink-0 w-[58px] h-8 text-base text-left text-gray-500">
-            /month
+            /mois 
           </p>
         </div>
         <p class="w-[249px] absolute left-0 top-[43px] text-2xl font-semibold text-left text-gray-900">
