@@ -90,14 +90,11 @@ import { allMaisonsFavori } from '@/backend'
 </script>
 
 <template>
-  <h1 class="text-2xl">Bonjour monde !</h1>
+  <h1 class="text-2xl">Bonjour monde ! la racine du site dans /src/pages/index.vue</h1>
   <h2>
-   <!--  <MaisonCard v-bind="maisonsListe[0]" />
-    <MaisonCard v-bind:="maisonsListe [2]" />
-    <MaisonCard v-bind:="maisonsListe [1]" /> -->
-    <!-- <PersonneCard v-for="unPersonne in personnesListe" :key="unPersonne.nom" v-bind="unPersonne" /> -->
-    <MaisonCard v-for="uneMaison in maisonsListe" :key="uneMaison.id" v-bind="uneMaison"/>
-    <MaisonCard v-for="uneMaison in maisonsFav" :key="uneMaison.id" v-bind="uneMaison"/>
-
+    les favoris
   </h2>
+  <MaisonCard v-for="uneMaison in maisonsFav" :key="uneMaison.id" v-bind="uneMaison" />
+
+
 </template>
