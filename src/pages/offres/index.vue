@@ -14,7 +14,19 @@ const maisonsFav = await allMaisonsFavori()
 
 <template>
   <h1 class="text-2xl">Bonjour monde ! la liste de toutes les offres du site dans /src/pages/offres/index.vue</h1>
-  <h2>
+  <!-- <h2>
     <MaisonCard v-for="uneMaison in maisonsListe" :key="uneMaison.id" v-bind="uneMaison" />
-  </h2>
+  </h2> -->
+  <ul>
+    <li v-for="uneMaison of maisonsListe" :v-key="uneMaison.id">
+      <RouterLink :to="{
+        name: '/offres/[id]',
+        params: {
+          id: uneMaison.id
+        }
+      }" class="text-red-400 hover:text-red-600">
+        {{ uneMaison.nomMaison }}
+      </RouterLink>
+    </li>
+  </ul>
 </template>
